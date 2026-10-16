@@ -23,12 +23,12 @@
   // OPTIONAL — Cloudflare D1 database (instead of Supabase). See docs/DATABASE.md.
   // Remove the two slashes (//) at the start of each of the next 8 lines,
   // and replace PASTE-YOUR-D1-DATABASE-ID with the Database ID shown in Cloudflare.
-  // "d1_databases": [
-  //   {
-  //     "binding": "DB",
-  //     "database_name": "ems-d1",
-  //     "database_id": "PASTE-YOUR-D1-DATABASE-ID",
-  //     "migrations_dir": "db/d1/migrations"
-  //   }
-  // ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ems-d1",
+      "database_id": "4e8a0693-59f8-4031-b65b-267b625af327",
+      "migrations_dir": "db/d1/migrations"
+    }
+  ],
 }
