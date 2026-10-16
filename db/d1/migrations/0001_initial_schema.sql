@@ -1,4 +1,4 @@
--- EMS 5 — initial schema (Cloudflare D1 / SQLite).
+-- EMS 5 — initial schema (Cloudflare D1 / SQLite)
 --
 -- For a NEW, empty D1 database only. Tables are created without IF NOT EXISTS,
 -- so running this against a database that already has EMS tables fails before
