@@ -1,0 +1,142 @@
+/*
+ * EMS design tokens — the single source for colour, type, spacing, radius,
+ * elevation and motion. Components use these through CSS Modules only.
+ * Light by default, dark via the system preference or <html data-theme>.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Brand (the owner can override --brand / --accent in Website branding). */
+  --brand: #059669;
+  --brand-strong: #047857;
+  --brand-soft: color-mix(in srgb, var(--brand) 12%, transparent);
+  --accent: #0284c7;
+  --on-brand: #ffffff;
+
+  /* Console role accents. */
+  --role-owner: #7c3aed;
+  --role-admin: #0284c7;
+  --role-shop: #059669;
+
+  /* Neutrals. */
+  --bg: #f4f4f5;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --surface-sunken: #f1f1f3;
+  --line: rgb(24 24 27 / 0.09);
+  --line-strong: rgb(24 24 27 / 0.18);
+  --text: #18181b;
+  --text-muted: #52525b;
+  --text-subtle: #71717a;
+
+  /* Status. */
+  --success: #15803d;
+  --success-soft: #dcfce7;
+  --warning: #b45309;
+  --warning-soft: #fef3c7;
+  --danger: #b91c1c;
+  --danger-soft: #fee2e2;
+  --info: #0369a1;
+  --info-soft: #e0f2fe;
+
+  /* Type. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Bengali', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --leading: 1.55;
+
+  /* Space (4px grid). */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Shape and elevation. */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+  --shadow-sm: 0 1px 2px rgb(24 24 27 / 0.06);
+  --shadow: 0 1px 2px rgb(24 24 27 / 0.06), 0 8px 24px -12px rgb(24 24 27 / 0.18);
+  --ring: 0 0 0 3px color-mix(in srgb, var(--brand) 35%, transparent);
+
+  /* Motion. */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration: 180ms;
+  --duration-slow: 320ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0a0a0b;
+    --surface: #131316;
+    --surface-2: #17171b;
+    --surface-sunken: #0f0f12;
+    --line: rgb(255 255 255 / 0.08);
+    --line-strong: rgb(255 255 255 / 0.18);
+    --text: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --text-subtle: #8b8b93;
+    --brand: #10b981;
+    --brand-strong: #34d399;
+    --on-brand: #04130d;
+    --success: #4ade80;
+    --success-soft: rgb(74 222 128 / 0.12);
+    --warning: #fbbf24;
+    --warning-soft: rgb(251 191 36 / 0.12);
+    --danger: #f87171;
+    --danger-soft: rgb(248 113 113 / 0.12);
+    --info: #38bdf8;
+    --info-soft: rgb(56 189 248 / 0.12);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.6);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0a0b;
+  --surface: #131316;
+  --surface-2: #17171b;
+  --surface-sunken: #0f0f12;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.18);
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-subtle: #8b8b93;
+  --brand: #10b981;
+  --brand-strong: #34d399;
+  --on-brand: #04130d;
+  --success: #4ade80;
+  --success-soft: rgb(74 222 128 / 0.12);
+  --warning: #fbbf24;
+  --warning-soft: rgb(251 191 36 / 0.12);
+  --danger: #f87171;
+  --danger-soft: rgb(248 113 113 / 0.12);
+  --info: #38bdf8;
+  --info-soft: rgb(56 189 248 / 0.12);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration: 0ms;
+    --duration-slow: 0ms;
+  }
+}
