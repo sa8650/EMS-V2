@@ -18,7 +18,7 @@
   // OPTIONAL — file storage (Vaultium documents, App Store uploads).
   // First create an R2 bucket named ems-files in the Cloudflare dashboard,
   // then remove the two slashes (//) at the start of the next line.
-  // "r2_buckets": [{ "binding": "FILES", "bucket_name": "ems-files" }],
+   "r2_buckets": [{ "binding": "FILES", "bucket_name": "ems-files" }],
 
   // OPTIONAL — Cloudflare D1 database (instead of Supabase). See docs/DATABASE.md.
   // Remove the two slashes (//) at the start of each of the next 8 lines,
